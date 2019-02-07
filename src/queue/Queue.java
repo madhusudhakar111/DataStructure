@@ -5,7 +5,7 @@ public class Queue {
 	int arr[];
 	int front;
 	int rear;
-	int length=0;
+	int length = 0;
 
 	public Queue(int size) {
 		super();
@@ -17,33 +17,36 @@ public class Queue {
 	private void add(int value) {
 		arr[rear++] = value;
 		length++;
-		
+
 	}
-	
 
 	private int remove() {
 		int i = 0;
 		int deletedValue = arr[front];
-		
-		while(front < length ) {
+
+		while (front < length) {
 			arr[front] = arr[++front];
 		}
-		
+
 		return deletedValue;
-		
+
 	}
 
 	private void print() {
-		int length = length();;
-		int i=0;
-		while(i <= length ) {
+		int length = length();
+		;
+		int i = 0;
+		while (i <= length) {
 			System.out.println(arr[i++]);
 		}
-	
 
 	}
-	
+
 	private int length() {
+		return length;
+	}
+	
+	public int size() {
 		return length;
 	}
 
@@ -59,15 +62,15 @@ public class Queue {
 		queue.add(6);
 
 		int[] i = new int[5];
-		
-		i[0] =2;
-		
+
+		i[0] = 2;
+
 		queue.print();
-		
-		System.out.println("Removed >>>"+queue.remove());
-		
+
+		System.out.println("Removed >>>" + queue.remove());
+
 		queue.print();
-		
+
 	}
 
 }

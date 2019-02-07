@@ -19,27 +19,24 @@ public class Stack {
 		return arr[top--];
 	}
 
-@Override
-protected Object clone() throws CloneNotSupportedException {	
-	// TODO Auto-generated method stub
-	return super.clone();
-}
-	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
 	private void print() {
 		int size = size();
-		while(size != -1 ) {
+		while (size != -1) {
 			System.out.println(arr[size--]);
 		}
-		
 
 	}
 
 	private int size() {
 		return top;
 	}
-	
-	
-	
+
 	public static void main(String[] args) {
 
 		Stack stack = new Stack(10);
@@ -51,8 +48,8 @@ protected Object clone() throws CloneNotSupportedException {
 		stack.push(6);
 
 		stack.print();
-		System.out.println("Removed >>"+stack.pop());
-		
+		System.out.println("Removed >>" + stack.pop());
+
 		stack.print();
 	}
 
