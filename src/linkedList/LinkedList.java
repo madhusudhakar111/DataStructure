@@ -49,6 +49,115 @@ public class LinkedList {
 
 	}
 
+	public void removeNode(int data) {
+
+		Node prev = null;
+		Node curNode = head;
+
+		while (curNode.data != data) {
+			prev = curNode;
+			curNode = curNode.next;
+		}
+
+		prev.next = curNode.next;
+
+	}
+
+	public void removePosition(int position) {
+
+		Node prev = null;
+		Node curNode = head;
+		int counnter = 1;
+
+		while (counnter != position) {
+			prev = curNode;
+			curNode = curNode.next;
+			counnter++;
+		}
+
+		prev.next = curNode.next;
+	}
+
+	public int getCount() {
+		int counter = 0;
+		Node curNode = head;
+		while (curNode != null) {
+			curNode = curNode.next;
+			counter++;
+		}
+
+		return counter;
+	}
+
+	// 9. Write a function to get Nth node in a Linked List
+	public int findNthNode(int index) {
+
+		int counter = 1;
+		Node curNode = head;
+
+		while (counter != index) {
+			curNode = curNode.next;
+			counter++;
+		}
+
+		return curNode.data;
+	}
+
+	// 10. Nth node from the end of a Linked List
+	public int nthNodefromEnd(int position) {
+		int index = (length - position) + 1;
+		return findNthNode(index);
+	}
+	
+	// 11. Print the middle of a given linked list
+	public int middleElement() {
+		
+		// case 1 : 
+		
+		/**			
+			int count = getCount();	
+			int index = count/2;
+			int data = findNthNode(index);
+			return data;
+			
+			*/
+		
+		// case 2 : 
+				
+		Node slow_ptr = head;
+		Node fast_ptr = head;
+		
+		while(fast_ptr!=null && fast_ptr.next !=null) {
+			slow_ptr = slow_ptr.next;
+			fast_ptr = fast_ptr.next.next;
+			
+		}
+		
+		return slow_ptr.data;
+		
+	}
+	
+	
+	//12. Write a function that counts the number of times a given int occurs in a Linked List
+	public int countGivenInt(int data) {
+		
+		Node curNode = head;
+		int counter = 0;
+		
+		while(curNode !=null) {
+			if(curNode.data == data) {
+				counter++;
+			}
+			curNode = curNode.next;
+		}
+		
+		return counter;
+	}
+	
+	
+	
+	
+
 }
 
 class Node {
