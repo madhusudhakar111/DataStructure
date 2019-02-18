@@ -122,8 +122,7 @@ public class Test {
         lst.add(6); 
         lst.add(5); 
         lst.add(4); 
-        lst.add(3); 
-        lst.add(2); 
+        lst.add(3);         lst.add(2); 
         lst.add(1); 
         
         
