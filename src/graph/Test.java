@@ -3,7 +3,16 @@ package graph;
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//String a = "xx";
+		
+		String a = null;
+		
+		if(a==null) {
+			return;
+		}
+		
+		System.out.println("Hello word");
 
 	}
 
